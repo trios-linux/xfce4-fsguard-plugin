@@ -1,0 +1,3 @@
+version=3
+http://archive.xfce.org/src/panel-plugins/xfce4-fsguard-plugin/([\d\.]+)/ \
+	xfce4-fsguard-plugin-([\d\.]+)\.tar\.(?:gz|bz2)

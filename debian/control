@@ -1,0 +1,19 @@
+Source: xfce4-fsguard-plugin
+Section: xfce
+Priority: optional
+Maintainer: Filip Danilovic <filip@openmailbox.org>
+Build-Depends: debhelper (>= 9), xfce4-panel-dev,
+ libxml2-dev, libxml-parser-perl, intltool, libx11-dev, pkg-config,
+ libgtk2.0-dev, libxfce4ui-1-dev, autotools-dev
+Standards-Version: 3.9.6
+Homepage: http://goodies.xfce.org/projects/panel-plugins/xfce4-fsguard-plugin
+Vcs-Svn: svn://svn.debian.org/pkg-xfce/goodies/trunk/xfce4-fsguard-plugin/
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-xfce/goodies/trunk/xfce4-fsguard-plugin/
+
+Package: xfce4-fsguard-plugin
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: filesystem monitor plugin for the Xfce4 panel
+ The fsguard plugin checks free space on a chosen mount point
+ frequently and displays an alarm if free space is less than
+ given alarm limit.

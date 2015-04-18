@@ -1,0 +1,203 @@
+xfce4-fsguard-plugin (1.0.2-1+trios1) mia; urgency=medium
+
+  * New upstream release.
+  * TRIOS Build.
+  * Bump standards to 3.9.6.
+
+ -- Filip Danilovic <filip@openmailbox.org>  Sun, 19 Apr 2015 01:39:42 +0200
+
+xfce4-fsguard-plugin (1.0.1-2) unstable; urgency=low
+
+  * debian/rules:
+    - enable all hardening flags.
+  * debian/control:
+    - drop build-dep on dpkg-dev, stable has a recent enough version.
+    - drop dependency on xfce4-panel build-dep, stable has Xfce 4.8.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Fri, 24 May 2013 07:33:25 +0200
+
+xfce4-fsguard-plugin (1.0.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/patches:
+    - 01_fix-resource-file-loading dropped, included upstream.
+    - 02_include_sys_vfs_h_on_gnu as well. 
+  * debian/control:
+    - replace libxfcegui4 dependency by libxfce4ui.
+    - add build-dep on autotools-dev.
+  * debian/rules:
+    - use autotools-dev addon to get rid of old config.{guess,sub} files.
+    - pass --disable-static to configure and use find to delete .la files. 
+    - stop disabling tests. 
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Sat, 30 Jun 2012 15:30:45 +0200
+
+xfce4-fsguard-plugin (1.0.0-4) unstable; urgency=low
+
+  * debian/patches:
+    - 02_include_sys_vfs_h_on_gnu added, fix FTBFS on GNU/Hurd, thanks Cyril
+      Brulebois.                                                closes: #670879
+  * debian/rules:
+    - build with --parallel.
+  * debian/control:
+    - update standards version to 3.9.3.
+    - update debhelper build-dep to 9.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Thu, 03 May 2012 07:55:50 +0200
+
+xfce4-fsguard-plugin (1.0.0-3) unstable; urgency=low
+
+  [ Lionel Le Folgoc ]
+  * debian/patches/01_fix-resource-file-loading.patch: updated, fix segfault
+    when no config exists, and correctly initialize settings with default
+    values.                                                     closes: #637160
+
+  [ Yves-Alexis Perez ]
+  * debian/rules:
+    - use dpkg-dev 1.16.1 and dh9 hardening support
+    - use multiarch paths
+  * debian/compat bumped to 9.
+  * debian/control:
+    - drop build-dep on hardening-includes
+    - add build-dep on debhelper 8.9.4 and dpkg-dev 1.16.1 for hardening
+      support.
+    - only set uploaders to Lionel and me, thanks to all the others for the
+      past work!
+  * debian/compat bumped to 9.
+
+ -- Lionel Le Folgoc <mrpouit@gmail.com>  Sat, 03 Dec 2011 20:21:27 +0100
+
+xfce4-fsguard-plugin (1.0.0-2) unstable; urgency=low
+
+  * debian/patches:
+    - 01_fix-resource-file-loading added, use the correct function to lookup
+      resource file so default are correctly used.              closes: #637161
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Sun, 04 Sep 2011 22:36:20 +0200
+
+xfce4-fsguard-plugin (1.0.0-1) unstable; urgency=low
+
+  [ Evgeni Golov ]
+  * Fix Vcs-* fields, they were missing 'trunk' in the path.
+
+  [ Yves-Alexis Perez ]
+  * debian/watch edited to track Xfce archive reorganisation.
+  * debian/control:
+    - update standards version to 3.9.2.
+    - update Xfce build-deps to 4.8. 
+
+  [ Stefan Ott ]
+  * Increment debhelper compatibility to version 5
+  * debian/control:
+    - incremented debhelper build-dep to version >= 5.
+    - move to xfce section.
+
+  [ Lionel Le Folgoc ]
+  * New upstream release.
+  * debian/compat: bump to 7.
+  * debian/control:
+    - drop cdbs and bump dh b-dep to >= 7.0.50~
+    - b-dep on hardening-includes.
+  * Switch to 3.0 (quilt) source format.
+  * debian/rules:
+    - switch to dh.
+    - pick {C,LD}FLAGS from dpkg-buildflags.
+    - add -O1, -z,defs and --as-needed to LDFLAGS.
+    - add hardening flags to {C,LD}FLAGS.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Tue, 19 Apr 2011 22:59:01 +0200
+
+xfce4-fsguard-plugin (0.4.2-1) unstable; urgency=low
+
+  [ Stefan Ott ]
+  * debian/control: update e-mail address
+
+  [ Yves-Alexis Perez ]
+  * New upstream release.
+  * debian/control:
+    - add build-dep on intltool, libx11-dev, pkg-config, libgtk2.0-dev,
+      libxfcegui4-dev.
+    - update standards version to 3.8.0.
+    - add depend on ${misc:Depends}.
+  * debian/patches:
+    - 01_ja.po dropped, merged upstream.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Sun, 22 Feb 2009 19:21:49 +0100
+
+xfce4-fsguard-plugin (0.4.1-2) unstable; urgency=low
+
+  * debian/patches:
+    - 01_ja.po.diff added, update ja translation.               closes: #475912
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Mon, 14 Apr 2008 22:44:05 +0200
+
+xfce4-fsguard-plugin (0.4.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * debian/copyright: update copyright notices.
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Sun, 17 Feb 2008 14:48:12 +0100
+
+xfce4-fsguard-plugin (0.4.0-1) unstable; urgency=low
+
+  [ Yves-Alexis Perez]
+  * New upstream release.
+  * debian/control:
+    - updated standard versions to 3.7.3.
+    - changed my email address.
+
+  [ Simon Huggins]
+  * debian/control: Move fake Homepage field to a real one now dpkg
+    supports it.
+  * Add Vcs-* headers to debian/control
+
+ -- Yves-Alexis Perez <corsac@debian.org>  Sat, 08 Dec 2007 06:17:04 +0100
+
+xfce4-fsguard-plugin (0.3.0-3) unstable; urgency=low
+
+  (Stefan Ott)
+  * debian/control: updated the url
+
+  (Yves-Alexis Perez)
+  * debian/control:
+   - removed Jani from uploaders as he's not anymore in the team.
+   - removed gtk from build-dep as it's pulled by xfce4-panel-dev anyway.
+  * debian/rules: added cdbs simple-patchsys rules
+  * debian/patches:
+    - 01_fix-ftbfs-kfreebsd.patch added, thanks Cyril Brulebois.
+                                                                closes: #415661
+  (Simon Huggins)
+   - Updated standard versions to 3.7.2.2.
+   - Build-dep on latest xfce4-panel-dev.
+
+ -- Yves-Alexis Perez <corsac@corsac.net>  Sun, 29 Apr 2007 14:49:59 +0100
+
+xfce4-fsguard-plugin (0.3.0-2) unstable; urgency=low
+
+  * Incremented build-deps to 4.3.90.2 (Xfce 4.4 Beta2).
+  * Updated standards version to 3.7.2.
+
+ -- Yves-Alexis Perez <corsac@corsac.net>  Wed, 26 Jul 2006 17:49:08 +0100
+
+xfce4-fsguard-plugin (0.3.0-1) unstable; urgency=low
+
+  * New upstream release
+  * Removed explicit dependency on xfce4-panel (managed by shlibs)
+
+ -- Yves-Alexis Perez <corsac@corsac.net>  Wed, 03 May 2006 19:17:15 +0100
+
+xfce4-fsguard-plugin (0.2.1-1) unstable; urgency=low
+
+  * (Rudy Godoy)
+    * Updated standards version
+    * Removed dependency and not bootstraping autotools since 
+      upstream is using an up to date version
+    * Fixed wrongly named post-install target
+    * Initial Release						closes: #309863
+  * (Simon Huggins)
+    * Add build-depends on >= 4.2.2 (though this won't matter now the
+      autobuilders have actually all installed it but hey)
+  * (Stefan Ott)
+    * Reorganized the changelog
+
+ -- Stefan Ott <stefan@desire.ch>  Mon, 19 Dec 2005 16:21:42 +0100
